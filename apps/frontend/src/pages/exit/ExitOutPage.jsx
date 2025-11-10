@@ -202,14 +202,14 @@ export default function ExitOutPage() {
                         </div>
                       </div>
                     </div>
-                    {/*<Button
+                    <Button
                       onClick={() => releaseTeam(item.registrationId)}
                       disabled={releasing.has(item.registrationId)}
                       variant="primary"
                     >
                       {releasing.has(item.registrationId) ? 'Releasing...' : 'Release All'}
-                    </Button>*/}
-                    {/* START: New Confirmation Block */}
+                    </Button>
+                    {/* START: New Confirmation Block 
                     {confirmingId === item.registrationId ? (
                     // IF we are confirming this ID, show "Confirm" and "Cancel" buttons
                       <div className="flex gap-2">
@@ -241,7 +241,7 @@ export default function ExitOutPage() {
                           {releasing.has(item.registrationId) ? 'Releasing...' : 'Release All'}
                         </Button>
                         )}
-                      {/* END: New Confirmation Block */}
+                      END: New Confirmation Block */}
                   </div>
                 </div>
               ))}
