@@ -12,7 +12,7 @@ export default function ExitOutPage() {
   const [releasing, setReleasing] = useState(new Set());
   const [toast, setToast] = useState(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
-  const [confirmingId, setConfirmingId] = useState(null);
+  const [confirmingId, setConfirmingId] = useState(null); //New state has been added for confirming part.
 
   // Fetch stack data
   const fetchStack = async () => {
@@ -202,14 +202,13 @@ export default function ExitOutPage() {
                         </div>
                       </div>
                     </div>
-                    <Button
+                    { /*<Button
                       onClick={() => releaseTeam(item.registrationId)}
                       disabled={releasing.has(item.registrationId)}
                       variant="primary"
                     >
                       {releasing.has(item.registrationId) ? 'Releasing...' : 'Release All'}
-                    </Button>
-                    {/* START: New Confirmation Block 
+                    </Button> */ }
                     {confirmingId === item.registrationId ? (
                     // IF we are confirming this ID, show "Confirm" and "Cancel" buttons
                       <div className="flex gap-2">
@@ -224,7 +223,7 @@ export default function ExitOutPage() {
                           {releasing.has(item.registrationId) ? 'Releasing...' : 'Confirm Release'}
                         </Button>
                         <Button
-                          onClick={() => setConfirmingId(null)} // Just reset state
+                          onClick={() => setConfirmingId(null)}
                           variant="outline"
                           disabled={releasing.has(item.registrationId)}
                         >
@@ -234,15 +233,14 @@ export default function ExitOutPage() {
                     ) : (
                       // ELSE, show the normal "Release All" button
                         <Button
-                          onClick={() => setConfirmingId(item.registrationId)} // Set this ID as "pending confirmation"
+                          onClick={() => setConfirmingId(item.registrationId)} 
                           disabled={releasing.has(item.registrationId)}
                           variant="primary"
                           >
                           {releasing.has(item.registrationId) ? 'Releasing...' : 'Release All'}
                         </Button>
                         )}
-                      END: New Confirmation Block */}
-                  </div>
+                      </div>
                 </div>
               ))}
             </div>
