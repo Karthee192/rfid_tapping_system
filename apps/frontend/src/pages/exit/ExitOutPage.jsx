@@ -209,6 +209,7 @@ export default function ExitOutPage() {
                     >
                       {releasing.has(item.registrationId) ? 'Releasing...' : 'Release All'}
                     </Button> */ }
+
                     {confirmingId === item.registrationId ? (
                     // IF we are confirming this ID, show "Confirm" and "Cancel" buttons
                       <div className="flex gap-2">
@@ -218,8 +219,7 @@ export default function ExitOutPage() {
                            setConfirmingId(null); // Reset confirmation state
                            }}
                           disabled={releasing.has(item.registrationId)}
-                          variant="danger" // Changed color to red to show it's a final action
-                          >
+                         >
                           {releasing.has(item.registrationId) ? 'Releasing...' : 'Confirm Release'}
                         </Button>
                         <Button
